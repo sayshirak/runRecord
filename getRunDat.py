@@ -10,6 +10,7 @@ def getRunDat():
     data_original = pd.read_csv('runRecord.csv', encoding = 'gb2312')
     height = data_original.shape[0]
     width = 12
+    return data_original
 
 if __name__ == '__main__':
     time1 = time.time()
