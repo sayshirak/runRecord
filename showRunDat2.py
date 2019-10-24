@@ -56,10 +56,12 @@ def showDatDistance() -> Line:
                 .add_yaxis("跑步距离",listDistance).set_global_opts(
                             yaxis_opts=opts.AxisOpts(
                                 type_="value",
-                                is_scale=True
+                                is_scale=True,
+                                yaxis_index=1,
+                                is_add_yaxis=True
                             ),
                             title_opts=opts.TitleOpts(title="跑步距离曲线")
-        )
+                )
     )
     #lineDist.render("dateDistance.html")
     return C
@@ -78,11 +80,19 @@ def showDatTime() -> Line:
                                 is_scale=True
                             ),
                             title_opts=opts.TitleOpts(title="跑步时间曲线")
+            )
+            .add_yaxis("每公里配速", listPace).set_global_opts(
+            yaxis_opts=opts.AxisOpts(
+                type_="time",
+                is_scale=True
+            ),
+            title_opts=opts.TitleOpts(title="配速曲线")
         )
     )
     #lineTime.render("dateTime.html")
     return C
 
+'''
 @C.funcs
 def showDatPace() -> Line:
     C = (
@@ -102,7 +112,7 @@ def showDatPace() -> Line:
     )
     #linePace.render("paceTime.html")
     return C
-
+'''
 @C.funcs
 def showDatCal() -> Line:
     C = (
@@ -155,11 +165,18 @@ def showDatFrequency() -> Line:
                             is_scale=True,
                         ),
                         title_opts=opts.TitleOpts(title="步频曲线")
+            )
+            .add_yaxis("平均步幅", listStride).set_global_opts(
+            yaxis_opts=opts.AxisOpts(
+                type_="value",
+                is_scale=True,
+            ),
+            title_opts=opts.TitleOpts(title="步幅曲线")
         )
     )
     #lineStepFrequency.render("stepFrequency.html")
     return C
-
+'''
 @C.funcs
 def showDatStride() -> Line:
     C = (
@@ -178,12 +195,12 @@ def showDatStride() -> Line:
     )
     #lineStride.render("stepStride.html")
     return C
-
+'''
 
 if __name__ == '__main__':
     time1 = time.time()
     print(time1)
     datPrepare()
-    Page().add(*[fn() for fn, _ in C.charts]).render("runDat.html")
+    Page().add(*[fn() for fn, _ in C.charts]).render("runDat2.html")
     time2 = time.time()
     print(time2)
