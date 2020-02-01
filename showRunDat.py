@@ -6,6 +6,7 @@ import time
 import numpy as np
 import pandas as pd
 import getRunDat
+import crawlWeb
 from pyecharts.charts import Line,Page
 from pyecharts import options as opts
 
@@ -26,6 +27,8 @@ countYear = []
 DistanceYear = []
 
 def datPrepare():
+    getDat = crawlWeb.getDatFromHttp()
+    return
     rawDat = getRunDat.getRunDat()
     height = rawDat.shape[0]
     for row in range(height-1):
