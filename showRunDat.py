@@ -20,6 +20,7 @@ listCal = []
 listHeartRate = []
 listStepFrequency = []
 listStride = []
+listWeight = []
 countMon = []
 DistanceMon = []
 countYear = []
@@ -43,6 +44,7 @@ def datPrepare():
         DistanceMon.append(rawDat.iloc[row, 9])
         countYear.append(rawDat.iloc[row, 10])
         DistanceYear.append(rawDat.iloc[row, 11])
+        listWeight.append(rawDat.iloc[row, 12])
 
 @C.funcs
 def showDatDistance() -> Line:
@@ -178,6 +180,22 @@ def showDatStride() -> Line:
     #lineStride.render("stepStride.html")
     return C
 
+@C.funcs
+def showDatWeight() -> Line:
+    C = (
+        Line().add_xaxis(listDate).set_global_opts(xaxis_opts=opts.AxisOpts(
+                name="日期",
+                is_scale=True
+            ))
+            .add_yaxis("体重",listWeight).set_global_opts(
+                        yaxis_opts=opts.AxisOpts(
+                            type_="value",
+                            is_scale=True,
+                        ),
+                        title_opts=opts.TitleOpts(title="体重曲线")
+        )
+    )
+    return C
 
 if __name__ == '__main__':
     time1 = time.time()
