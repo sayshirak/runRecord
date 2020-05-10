@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../decisionMaking/DMModeling/.idea/DMModeling.iml" filepath="$PROJECT_DIR$/../decisionMaking/DMModeling/.idea/DMModeling.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../busTime/.idea/busTime.iml" filepath="$PROJECT_DIR$/../busTime/.idea/busTime.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/runRecord.iml" filepath="$PROJECT_DIR$/.idea/runRecord.iml" />
     </modules>
   </component>
