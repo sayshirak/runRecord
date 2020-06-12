@@ -28,8 +28,8 @@ countYear = []
 DistanceYear = []
 
 def datPrepare():
-    getDat = crawlWeb.getDatFromHttp()
-    return
+    #getDat = crawlWeb.getDatFromHttp()
+    #return
     rawDat = getRunDat.getRunDat()
     height = rawDat.shape[0]
     for row in range(height-1):
